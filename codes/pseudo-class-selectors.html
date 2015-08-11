@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>CSS核心技术（一）之 伪类选择器</title>
+<style type="text/css">
+/*通配符选择器*/
+*{
+	margin: 0;
+	padding: 0;
+}
+mark {
+    background-color: yellow;
+    color: black;
+    font-weight: bold !important;
+}
+h1{
+	font-size: 40px;
+}
+/*未被访问前的样式*/
+a:link {
+	color: black;
+}
+/*已被访问过时的样式*/	
+a:visited {
+	color: purple;
+}
+/*鼠标悬停时的样式*/	
+a:hover {
+	color: blue;
+}
+/*被用户激活时的样式*/	
+a:active {
+	color: red;
+}
+input:focus{
+	border: red 1px solid;
+	outline: none;
+}
+</style>
+</head>
+<body>
+	<h1>伪类选择器</h1>
+	<h2>动态伪类</h2>
+	<a href="#nogo1">超链接</a>
+	<a href="#nogo2">超链接2</a>
+	<h2>行为动态伪类</h2>
+	<input type="text" value="" />
+</body>
+</html>
