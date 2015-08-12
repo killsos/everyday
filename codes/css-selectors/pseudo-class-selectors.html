@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>CSS选择器 之 伪类选择器</title>
+<style type="text/css">
+/* 通配符选择器 */
+*{
+	margin: 0;
+	padding: 0;
+}
+mark {
+    background-color: yellow;
+    color: black;
+    font-weight: bold !important;
+}
+h1{
+	font-size: 40px;
+}
+/* 未被访问前的样式 */
+a:link {
+	color: black;
+}
+/* 已被访问过时的样式 */	
+a:visited {
+	color: purple;
+}
+/* 鼠标悬停时的样式 */	
+a:hover {
+	color: blue;
+}
+/* 被用户激活时的样式 */	
+a:active {
+	color: red;
+}
+/* 行为的动态伪类 */
+input:focus{
+	border: red 1px solid;
+	outline: none;
+}
+/* 匹配可用状态的input */
+input[type="text"]:enabled {
+    background: #fff;
+}
+/* 匹配禁用状态的input */
+input[type="text"]:disabled{
+    background: #eee;
+}
+/* 匹配选中状态的input */
+input:checked + span {
+    background: red;
+}
+ul > li{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: gray 1px solid;
+}
+/* 选择父元素第一个 */
+li:first-child{
+	background: red;
+}
+/* 选择父元素最后一个 */
+li:last-child{
+	background: blue;
+}
+/* 指定选择 */
+li:nth-child(2) {
+	background: yellow;
+}
+/* 反选指定选择 */
+li:nth-last-child(2) {
+	background: yellow;
+}
+
+/* 同类型的第一个元素 */
+p:first-of-type {
+    color:red;
+}
+/* 同类型的最后一个元素 */
+p:last-of-type {
+    color:green;
+}
+/* 同类型的指定选择元素 */
+p:nth-of-type(2) {
+	font-weight: bold;
+}
+/* 同类型的指定反向选择元素 */
+p:nth-last-of-type(2) {
+	font-weight: bold;
+}
+/* 匹配父元素仅有的一个子元素 */
+p:only-child {
+    font-size: 36px;
+}
+/* 父元素很多个子元素，但是只会匹配其中只有一个子元素的元素 */
+p:only-of-type {
+    font-size: 36px;
+}
+p:empty {
+    height: 100px;
+    border:red 1px solid;
+}
+</style>
+</head>
+<body>
+	<h1>伪类选择器</h1><hr/>
+	<h2>动态伪类</h2>
+	<a href="#nogo1">超链接</a>
+	<a href="#nogo2">超链接2</a>
+	<h2>行为动态伪类</h2>
+	<input type="text" value="" />
+	<h2>表单动态伪类</h2>
+	<input type="text" value="可用状态" />
+	<input type="text" value="禁用状态" disabled="disabled" />
+	<input type="text" value="禁用状态" disabled="disabled" />
+	<label><input type="checkbox" name="fav" /><span>爱好女</span></label>
+	<h2>结构伪类</h2>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+	</ul>
+	<h2>结构伪类(type)</h2>
+	<div>
+		<h1>标题</h1>
+		<p>段落</p>
+		<p>段落</p>
+		<h1>标题</h1>
+		<p>段落</p>
+		<p>段落</p>
+	</div>
+	<h2>结构伪类(E:only-child)</h2>
+	<div>
+	    <p>段落</p>
+	</div>
+	<div>
+	    <div>容器</div>
+	    <p>段落</p>
+	    <div>容器</div>
+	</div>
+	<h2>内容伪类(E:empty)</h2>
+	<div>
+	    <p> </p>
+	    <p><!-- 我是空的 -- ></p>
+	</div>
+</body>
+</html>
