@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>CSS选择器 之 第四代选择器</title>
+<style type="text/css">
+/* 通配符选择器 */
+*{
+	margin: 0;
+	padding: 0;
+}
+mark {
+    background-color: yellow;
+    color: black;
+    font-weight: bold !important;
+}
+h1{
+	font-size: 40px;
+}
+
+:matches(section, nav, div) h1 {
+    color: red;
+}
+
+</style>
+</head>
+<body>
+	<section>
+		<h1>标题</h1>
+	</section>
+	<div>
+		<h1>标题</h1>
+	</div>
+	<nav>
+		<h1>标题</h1>
+	</nav>
+
+</body>
+</html>
