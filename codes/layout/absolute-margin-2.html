@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>CSS布局 之 解决方案</title>
+<title>CSS传统布局 之 侧栏固定主内容自适应</title>
 <style type="text/css">
 *{
 	margin: 0;
@@ -30,10 +30,11 @@ body{
 	position: relative;
 	color: #fff;
 }
+/* HTML结构不变的情况下，只需要调整right:0和margin-right:210px*/
 .aside{
 	position:absolute;
     top:0;
-    left:0;
+    right:0;
     width:200px;
     background: #318853;
 }
@@ -45,14 +46,19 @@ body{
 </style>
 </head>
 <body>
-	<div class="wrap">一栏居中</div>	
+	<!--margin + absolute-->
 	<div class="wrap-fluid">
 		<aside class="aside">侧边栏固定宽度</aside>
     	<div class="main">主内容栏自适应宽度</div>
-	</div>	
-	<div class="wrap-fluid">
+	</div>
+	<p>HTML结构不变的情况下，只需要调整right:0和margin-right:210px</p>	
+	<h3>问题缺陷</h3>
+	<p>1、由于侧边栏<mark>.aside</mark>使用<mark>position:absolute</mark>，导致文档脱离常规流，最终会导致侧边栏<mark>.aside</mark>无法撑开父元素的高度，它将会溢出父元素区域</p>
+	<p>2、假设你左侧的高度是不能固定，这种布局方式不推荐的</p>
+	<!--侧边栏脱离文档流，导致溢出父元素区域-->
+	<div class="wrap-fluid" style="border:red 1px solid;">
+		<aside class="aside" style="height:300px;">侧边栏会溢出</aside>
     	<div class="main">主内容栏自适应宽度</div>
-    	<aside class="aside">侧边栏固定宽度</aside>
 	</div>	
 </body>
 </html>
