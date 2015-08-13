@@ -5,31 +5,54 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>CSS传统布局 之 一栏居中</title>
 <style type="text/css">
-*{
-	margin: 0;
-	padding: 0;
-	text-align: center;
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
 }
 body{
+    font: 16px/1.5 tahoma,"Hiragino Sans GB","\u5fae\u8f6f\u96c5\u9ed1","\5FAE\8F6F\96C5\9ED1",arial,"\5b8b\4f53",sans-serif;
     background: #f6f6f6;
-    font: 20px/5 tahoma,"Hiragino Sans GB","\u5fae\u8f6f\u96c5\u9ed1","\5FAE\8F6F\96C5\9ED1",arial,"\5b8b\4f53",sans-serif;
+    color: #666;
 }
-
+a {
+    color: #fff;
+    text-decoration: none;
+}
+.nav, .footer{
+	width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    text-align: center;
+}
+.nav{
+	background: #0b8;
+}
+.footer{
+	background: #444;
+}
 .wrap{
 	margin: 30px auto;
-	width: 980px;
-	height: 100px;
+	padding: 30px 0;
+	width: 80%;
 	background: #fff;
 	box-shadow: 0 1px 2px rgba(137,137,137,.15);
+	text-align: center;
 }
-
 
 </style>
 </head>
 <body>
+	<nav class="nav">主内容栏水平居中</nav>
 	<!--margin:auto-->
-	<div class="wrap">一栏居中</div>	
-	<!--margin + absolute-->
+	<div class="wrap">
+		Wrap
+		<br/>
+		主内容栏
+	</div>	
+	<footer class="footer">
+		<p>©Copyright  <a href="https://github.com/Alsiso">Alsiso</a></p>
+	</footer>
 	
 
 </body>
