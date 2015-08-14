@@ -55,18 +55,18 @@ code{
 	border-radius: 3px;
 }
 pre{
-    padding: 20px;
+    padding: 15px;
     margin: 10px 0;
     overflow: auto;
 	font-size: 14px;
-    
+
 }
 
 
 /* 说明区域 */
 .explain{
 	margin: 30px auto;
-	padding: 10px;
+	padding: 10px 15px; 
 	width: 60%;	
 	background: #fff;
 	box-shadow: 0 1px 2px rgba(137,137,137,.15);
@@ -104,7 +104,7 @@ pre{
 <body>
 	<!--示例DEMO-->
 	<nav class="nav">
-		<h1>侧栏固定主内容自适应</h1>
+		<h1>侧栏固定主内容栏自适应</h1>
 	</nav>
 
 	<!--margin + absolute-->
@@ -123,6 +123,11 @@ pre{
 		<p>©Copyright  <a href="https://github.com/Alsiso">Alsiso</a></p>
 	</footer>
 	<section class="explain">
+		<h2>实现原理</h2>
+		<p>技术关键字：<code>absolute</code> + <code>margin</code></p>
+		<p>首先对<code>.wrap</code>父元素使用了<code>relative</code>相对定位，然后使用<code>absolute</code>让<code>.aside</code>脱离常规流，通过绝对定位到想要的位置。</p>
+		<p>而这时<code>.main</code>的本身就是块级元素，它会自动适应剩余宽度，所以我们不需要改变它的显示属性或者流方式，只是利用<code>margin-left:210px</code>给 <code>.aside</code>预留出足够显示的空间，即可达当前布局效果。</p>
+		<p><code>.aside</code>的宽度是<code>width:200px</code>，但是我们对<code>.main</code>设置<code>margin-left:210px</code>，这样做是为了留一个<code>10px</code>的列间隙。</p>
 		<h2>核心代码</h2>
 		<pre>.wrap{
     position: relative;
@@ -140,7 +145,7 @@ pre{
 		<h2>问题缺陷</h2>
 		<p>由于侧边栏<code>.aside</code>设置<code>position:absolute</code>，使文档脱离常规流，最终会导致侧边栏<code>.aside</code>无法撑开父元素的高度，它将会溢出父元素区域</p>
 		<p>假设你左侧的高度是不能固定，这种布局方式不推荐的	</p>
-		<h2>示例效果</h2>
+		<h2>问题效果</h2>
 		<!--侧边栏脱离文档流，导致溢出父元素区域-->
 		<div class="wrap" style="border:red 1px solid;">
 			<aside class="aside" style="height:300px;">侧边栏会溢出</aside>
