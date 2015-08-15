@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>CSS传统布局 之 侧栏固定主内容自适应</title>
+<style type="text/css">
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font: 16px/1.5 tahoma,"Hiragino Sans GB","\u5fae\u8f6f\u96c5\u9ed1","\5FAE\8F6F\96C5\9ED1",arial,"\5b8b\4f53",sans-serif;
+    background: #f6f6f6;
+    color: #666;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* 结构样式 */
+.aside, .main{
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(137,137,137,.15);	
+	text-align: center;
+	padding: 30px 0;
+}
+.nav, .footer{
+	width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    text-align: center;
+}
+.nav{
+	background: #0b8;
+}
+.nav h1{
+	font-size: 16px;
+	font-weight: normal;
+}
+.footer{
+	background: #444;
+}
+
+
+/* 代码相关 */
+code, pre{
+	font-family: Consolas,Menlo,Monaco,"Courier New",monospace;
+	background-color: #f6f6f6;	
+}
+code{
+	padding: 2px 4px;
+	border-radius: 3px;
+}
+pre{
+    padding: 15px;
+    margin: 10px 0;
+    overflow: auto;
+	font-size: 14px;
+
+}
+
+
+/* 说明区域 */
+.explain{
+	margin: 30px auto;
+	padding: 10px 15px; 
+	width: 60%;	
+	background: #fff;
+	box-shadow: 0 1px 2px rgba(137,137,137,.15);
+	box-sizing: border-box;
+}
+.explain h2{
+	margin: 10px 0 18px;
+	padding-bottom: 8px;
+	border-bottom: 1px dotted #ccc;
+	font-size: 18px;
+}
+.explain p{
+	margin: 18px 0;
+	font-size: 14px;
+}
+
+
+/* 布局核心样式 */
+.wrap{
+	margin: 30px auto;
+	width: 80%;
+}
+.aside{
+	float: left;
+	width: 200px;
+}
+.main{
+	margin-left: 210px;
+}
+</style>
+</head>
+<body>
+	<!--示例DEMO-->
+	<nav class="nav">
+		<h1>侧边栏固，主内容栏自适应</h1>
+	</nav>
+
+	<!--margin + absolute-->
+	<div class="wrap">
+		<aside class="aside">
+			<h2>Aside</h2>
+				<p>侧边栏固定宽度</p>
+			</aside>
+    	<div class="main">
+    		<h2>Main</h2>
+			<p>主内容栏自适应宽度</p>
+    	</div>
+	</div>	
+
+	<footer class="footer">
+		<p>©Copyright  <a href="https://github.com/Alsiso">Alsiso</a></p>
+	</footer>
+	<section class="explain">
+		<h2>实现原理</h2>
+		<p>技术关键字：<code>float</code> + <code>margin</code></p>
+		<pre>.wrap{
+    margin: 30px auto;
+    width: 80%;
+}
+.aside{
+    float: left;
+    width: 200px;
+}
+.main{
+    margin-left: 210px;
+}</pre>
+	</section>	
+</body>
+</html>
